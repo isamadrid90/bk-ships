@@ -1,0 +1,7 @@
+{{ form_start(form) }}
+{{ form_errors(form) }}
+{{ form_row(form.reservationStartDate) }}
+{{ form_row(form.reservationEndDate) }}
+{{ form_widget(form._token) }}
+<input type="submit" >Book</input>
+{{ form_end(form) }}

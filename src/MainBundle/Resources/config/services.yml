@@ -1,0 +1,25 @@
+services:
+# book ship services
+  main.form_subscriber.book_date:
+      class: MainBundle\Form\EventListener\BookSubscriber
+      arguments: [ @validator ]
+  main.form_handler.book:
+      class: MainBundle\Form\Handler\BookHandler
+      arguments: [ @doctrine.orm.entity_manager ]
+  validator.valid_book_date:
+      class: MainBundle\Validator\BookDateConstraintValidator
+      tags:
+          - { name: validator.constraint_validator, alias: valid_book_date }
+  main.services.book_cleaner:
+      class: MainBundle\Services\BookCleaner
+      arguments: [ @doctrine.orm.entity_manager ]
+  main.services.book_checker:
+      class: MainBundle\Services\BookChecker
+
+# build ship
+  main.form_handler.build:
+      class: MainBundle\Form\Handler\BuildHandler
+      arguments: [ @doctrine.orm.entity_manager ]
+
+  main.services.ship_cloner:
+      class: MainBundle\Services\ShipCloner

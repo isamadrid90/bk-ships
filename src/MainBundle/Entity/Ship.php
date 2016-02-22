@@ -73,14 +73,14 @@ class Ship
     /**
      * @var string
      *
-     * @ORM\Column(name="latitude", type="decimal", precision=10, scale=0)
+     * @ORM\Column(name="latitude", type="string")
      */
     private $latitude;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="longitude", type="decimal", precision=10, scale=0)
+     * @ORM\Column(name="longitude", type="string")
      */
     private $longitude;
 
